@@ -1,5 +1,4 @@
 <div align="center" >
-  <img src="assets/img/wandavision-desktop.png" width="400px"/>
   <img src="assets/img/wandavision-text.png" width="400px"/>
 </div>
 
