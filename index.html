@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wandavision</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Mukta:wght@200;300;400;500;700&display=swap" rel="stylesheet"> 
+  <script src="assets/js/svg-inject.min.js"></script>
+</head>
+<body>
+
+  <!--========= AUDIO =========-->
+  <audio autoplay loop>
+    <source src="assets/audio/wandavision-theme.mp3" type="audio/mp3">
+  </audio>
+
+  <!--========= LOADING =========-->
+  <section class="bg-loader">
+    <img src="assets/img/svg/disney-plus-logo-animated.svg" alt="" onload="SVGInject(this)">
+  </section>
+  
+  <!--========= HEADER =========-->
+  <header>
+    <nav class="navbar">
+      <div class="nav-menu">
+        <div class="nav-logo">
+          <a href=""><img class="logo-svg" src="assets/img/svg/marvel-studios-logo.svg" onload="SVGInject(this)" alt=""></a>
+        </div>
+        <ul class="nav-list">
+          <li><a href="" class="nav-link">Home</a></li>
+          <li><a href="" class="nav-link">Story</a></li>
+          <li><a href="" class="nav-link">Gallery</a></li>
+          <li><a href="" class="nav-link">#Wandavision</a></li>
+        </ul>
+      </div>
+      <div class="nav-social">
+        <img src="assets/img/svg/icon-facebook.svg" onload="SVGInject(this)" alt="">
+        <img src="assets/img/svg/icon-instagram.svg" onload="SVGInject(this)" alt="">
+        <img src="assets/img/svg/icon-youtube.svg" onload="SVGInject(this)" alt="">
+        <img class="mr-2" src="assets/img/svg/icon-twitter.svg" onload="SVGInject(this)" alt="">
+      </div>
+
+      <input id="hamburguer" type="checkbox" style="display: none;">
+      <label class="bx mr-3" id="navbar-toggle" for="hamburguer">
+      </label>
+    </nav>
+  </header>
+
+  <!--========= BG VIDEO =========-->
+  <section class="bg-video">
+    <video class="video" preload="none" autoplay muted loop>
+      <source src="assets/video/wandavision-video.mp4" type="video/mp4">
+    </video>
+  </section>
+
+
+  <!--========= CONTAINER =========-->
+
+  <section class="container">
+    <div class="container-item-1">
+      <div class="px-1 item-1">
+        <img src="assets/img/wandavision-text.png" alt="">
+      </div>
+      <div class="my-2 item-2">
+        <p>
+          Blends the style of classic sitcoms with the MCU in which Wanda 
+          Maximoff and Vision, two super-powered beings living their ideal 
+          suburban lives-begin to suspect that everything is not as it seems.
+        </p>
+      </div>
+      <div class="mt-1 flex item-3">
+        <a class="btn-primary" href="https://www.disneyplus.com/series/wandavision/4SrN28ZjDLwH">Watch on Disney+</a>
+        <a class="ml-2 btn-secondary" id="playBtn">Watch the teaser</a>
+      </div>
+      <div class="mt-2 flex align-items-center item-4">
+        <img src="assets/img/svg/disney-plus-logo.svg" class="w-auto" onload="SVGInject(this)" alt="">
+        <img src="assets/img/svg/marvel-logo.svg" class="ml-2 w-auto" onload="SVGInject(this)" alt="">
+      </div>
+    </div>
+    <div class="container-item-2 item-5">
+      <div class="js-tilt">
+        <img src="assets/img/wandavision-desktop.png" class="wandavision-desktop" alt="">
+        <img src="assets/img/wandavision-mobile.png" class="wandavision-mobile" alt="" srcset="">
+      </div>
+    </div>
+  </section>
+
+  <!-- <section class="container-story">
+    <div class="story">
+      <div class="story-image">
+        <img src="assets/img/story-1.png" alt="">
+      </div>
+      <div class="story-description">
+        <p>
+          In Avengers: Infinity War, Wanda and Vision have begun a secret romantic 
+          relationship. In The Battle of Wakanda, Thanos's army invades Wakanda as Shuri works to extract 
+          the Mind Stone from Vision, but she is unable to complete the extraction of the 
+          Mind Stone from Vision before Thanos arrives to retrieve it. Wanda is forced to 
+          destroy the Mind Stone and Vision, but Thanos uses the Time Stone to reverse her 
+          actions. He rips the repaired Mind Stone from Vision's forehead, effectively 
+          deactivating him. Thanos, with the completed Infinity Gauntlet, snaps his 
+          fingers, and Wanda becomes one of the victims of the Blip.
+          In 2023, Wanda is restored to life and is brought to the Avengers 
+          Headquarters to take part in the final battle against an alternate 
+          version of Thanos. Wanda confronts Thanos directly and nearly defeats him
+          with the avengers.
+        </p>
+      </div>
+    </div>
+    <div class="story">
+      <div class="story-description">
+        <p>
+          Set three weeks after the events of Avengers: Endgame (2019), Wanda
+          Maximoff and Vision are living an idyllic suburban life in the town 
+          of Westview, New Jersey, trying to conceal their true natures. As 
+          they begin to enter new decades and encounter television tropes, the 
+          couple suspects that things are not as they seem.
+        </p>
+      </div>
+      <div class="story-image">
+        <img src="assets/img/story-2.jpg" alt="">
+      </div>
+    </div>
+  </section> -->
+
+  <!--========= MODAL TRAILER =========-->
+  <div id="videoModal" class="modal">
+		<div class="modal-content">
+			<span class="close">&times;</span>
+			<div class="video-responsive">
+				<div id="ytplayer"></div>
+			</div>
+		</div>
+	</div>
+
+  <!--========= JS =========-->
+  <script src="assets/js/script.js"></script>
+  <script src="assets/js/vanilla-tilt-babel.min.js"></script>
+  <script type="text/javascript">
+    VanillaTilt.init(document.querySelector(".js-tilt"), {
+      perspective: 2000,
+      scale: 1.05
+    });   
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js" integrity="sha512-DkPsH9LzNzZaZjCszwKrooKwgjArJDiEjA5tTgr3YX4E6TYv93ICS8T41yFHJnnSmGpnf0Mvb5NhScYbwvhn2w==" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.2.6/gsap.min.js"></script>
+  <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/16327/MotionPathPlugin.min.js"></script>
+</body>
+</html>

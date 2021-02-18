@@ -1,0 +1,363 @@
+// Layout of project
+
+// Container-devices
+$container-xl: 1440px;
+$container-l: 1140px;
+$container-m: 960px;
+$container-s: 540px;
+
+// Mixin of media-queries
+@mixin responsive($device) {
+  @if $device == xl {
+    // For resolutions upper 1440px
+    @media screen and (min-width: $container-xl) {
+      @content;
+    }
+  } @else if $device == l {
+    // For resolutions between 1140px and 1440px
+    @media screen and (max-width: $container-xl) and (min-width: $container-l) {
+      @content;
+    }
+  } @else if $device == m {
+    // For resolutions between 960px and 1140px
+    @media screen and (max-width: $container-l) and (min-width: $container-m) {
+      @content;
+    }
+  } @else if $device == s {
+    // For resolutions less than 960px
+    @media screen and (max-width: $container-m) {
+      @content;
+    }
+  } @else if $device == xs {
+    // For resolutions less than 540px
+    @media screen and (max-width: $container-s) {
+      @content;
+    }
+  }
+}
+
+.container {
+  max-width: $container-xl;
+  margin: 0 auto;
+  padding: 36px 16px;
+
+  height: 100vh;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  overflow: hidden;
+
+  @include responsive(s) {
+    flex-direction: column;
+    align-items: flex-start;
+
+    padding-top: 144px;
+
+    height: auto;
+
+    background: linear-gradient(89.95deg, #DF776E 0.04%, #DF776E 0.04%, #EABCB4 0.05%, rgba(196, 38, 39, 0.523354) 47.38%, rgba(196, 38, 39, 0.523354) 47.39%, rgba(196, 38, 39, 0.523354) 47.4%, #D52F2B 99.95%);
+  }
+}
+
+.container-item-1 {
+  max-width: 580px;
+
+  @include responsive(s) {
+    max-width: 960px;
+    order: 2;
+  }
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  z-index: 1;
+
+  .item-2 p {
+    color: $white-light;
+  }
+
+}
+
+.container-item-2 {
+  flex-grow: 5;
+}
+
+.flex {
+  display: flex;
+}
+
+.flex-start {
+  justify-content: center;
+}
+
+.align-items-center {
+  align-items: center;
+}
+
+.w-auto {
+  width: auto;
+}
+
+.bg-loader {
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  z-index: 999;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+  background: linear-gradient(180deg, #060B2E 0%, #1A3E8D 100%);
+  overflow: hidden;
+
+  svg {
+    max-width: 700px;
+  }
+}
+
+.loader {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+
+  background-color: $white-light;
+
+  animation: pulse 3s linear infinite;
+}
+
+@keyframes pulse {
+  0%{
+    box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.7);
+  }
+  70%{
+    box-shadow: 0 0 0 200px rgba(255, 255, 255, 0);
+  }
+  100%{
+    box-shadow: 0 0 0 500px rgba(255, 255, 255, 0);
+  }
+}
+
+.bx {
+  width: 40px;
+  height: 40px;
+
+  display: none;
+  position: relative;
+  cursor: pointer;
+
+  transition: 1s ease;
+  
+  @include responsive(s) {
+    display: block
+  }
+
+  &::after {
+    content: '';
+    display: block;
+
+    position: absolute;
+    top: 33%;
+    left: 12%;
+
+    width: 75%;
+    height: 2px;
+    border-radius: 2px;
+
+    background-color: $white;
+
+    transition: 1s ease;
+  }
+
+  &::before {
+    content: '';
+    display: block;
+
+    position: absolute;
+    top: 57%;
+    left: 12%;
+
+    width: 75%;
+    height: 2px;
+    border-radius: 2px;
+
+    background-color: $white;
+
+    transition: 1s ease;
+  }
+}
+
+#hamburguer:checked ~ label.bx:after {
+  transform: rotate(225deg);
+  
+  width: 70%;
+  height: 10%;
+
+  top: 45%;
+  left: 15%;
+}
+
+#hamburguer:checked ~ label.bx:before {
+  transform: rotate(-225deg);
+  
+  width: 70%;
+  height: 10%;
+
+  top: 45%;
+  left: 15%;
+}
+
+.wandavision-desktop {
+  position: relative;
+  transition: .7s ease;
+
+  @include responsive(xl) {
+    transform: translate3d(-15px, 46px, 0px);
+    width: 105%;
+  }
+
+  @include responsive(l) {
+    transform: translate3d(32px, 70px, 0);
+    width: 100%;
+  }
+
+  @include responsive(m) {
+    transform: translate3d(-59px, 65px, 0);
+    width: 120%;
+  }
+
+  @include responsive(s){
+    transform: translate3d(-40px, 55px, 0);
+    width: 120%;
+  }
+}
+
+.wandavision-mobile {
+  display: none;
+}
+
+.bg-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  z-index: -1;
+
+  object-fit: cover;
+  width: 100vw;
+  height: 100vh;
+  
+  overflow: hidden;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+  &::after {
+    content: '';
+    width: 100%;
+    height: 100%;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+
+    background: linear-gradient(89.95deg, #DF776E 0.04%, #DF776E 0.04%, #EABCB4 0.05%, rgba(196, 38, 39, 0.523354) 47.38%, rgba(196, 38, 39, 0.523354) 47.39%, rgba(196, 38, 39, 0.523354) 47.4%, #D52F2B 99.95%);
+
+    @include responsive(s) {
+      display: none;
+    }
+  }
+}
+
+.video {
+  object-fit: cover;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+}
+
+
+.item-3 {
+  @include responsive(s) {
+    flex-direction: column;
+  }
+}
+
+.item-3 a {
+  @include responsive(s) {
+    margin: 10px 0;
+  }
+}
+
+/* Make Video Responsive */
+.video-responsive {
+	overflow: hidden;
+	padding-bottom: 56.25%;
+	position: relative;
+	height: 0;
+	
+	iframe {
+		left: 0;
+		top: 0;
+		height: 100%;
+		width: 100%;
+		position: absolute;
+	}
+}
+
+/* The Modal */
+.modal {
+	display: none; /* Hidden by default */
+	position: fixed; /* Stay in place */
+	z-index: 1; /* Sit on top */
+	padding-top: 100px; /* Location of the box */
+	left: 0;
+	top: 0;
+	width: 100%; /* Full width */
+	height: 100%; /* Full height */
+	overflow: auto; /* Enable scroll if needed */
+	background-color: rgb(0, 0, 0); /* Fallback color */
+	background-color: rgba(0, 0, 0, 0.7); /* Black w/ opacity */
+
+	.modal-content {
+		margin: auto;
+		padding: 0;
+		position: relative;
+		border: 3px solid $secondary;
+		width: 80%;
+		max-width: 600px;
+	}
+}
+
+/* Close Button */
+.close {
+	color: $primary;
+  background-color: $secondary;
+  border-radius: 20px;
+	right: -48px;
+	top: -3px;
+	font-size: 30px;
+	font-weight: bold;
+	position: absolute;
+	padding: 0px 12px;
+	transition: all .3s;
+	
+	&:hover,
+	&:focus {
+		background-color: white;
+		color: #ff0000;
+		text-decoration: none;
+		cursor: pointer !important;
+	}
+}
+

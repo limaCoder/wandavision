@@ -1,0 +1,130 @@
+header {
+  width: 100%;
+  position: fixed;
+  z-index: 800;
+  padding: 26px 0;
+
+  @include responsive(s) {
+    background-color: $secondary;
+  }
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+.nav-menu {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.nav-list {
+  list-style: none;
+  display: flex;
+
+  li {
+    margin-left: 24px;
+  }
+
+  @include responsive(s) {
+    list-style-type: none;
+    display: none;
+    flex-direction: column;
+    z-index: 5;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 100%;
+    background-color: $secondary;
+  }
+}
+
+.logo-svg {
+  width: 160px;
+}
+
+.nav-link {
+  display: inline-block;
+  text-decoration: none;
+
+  font-size: 14px;
+  letter-spacing: 2px;
+  font-weight: 200;
+
+  padding: 8px 16px;
+
+  color: $white-dark;
+
+  text-transform: uppercase;
+  transition: all .7s ease;
+
+  position: relative;
+
+  &::after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: -50px;
+    left: 50%;
+
+    margin-top: 8px;
+    width: 2px;
+    height: 0px;
+    border-radius: 2px;
+
+    transform: translate3d(-15%, 0, 0);
+    transition: .7s ease;
+
+    background: linear-gradient( 359.94deg, #E50B14 0.06%, rgba(225, 28, 33, 0) 101.91%);
+  }
+
+  &:hover {
+    color: $white-light;
+    font-weight: bold;
+
+    &::after {
+      height: 40px;
+    }
+  }
+
+  @include responsive(s) {
+    color: $primary;
+    text-align: center;
+    margin: 15px auto;
+  }
+}
+
+.nav-social {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  @include responsive(s) {
+    display: none;
+  }
+
+  svg {
+    margin-left: 28px;
+    width: 18px;
+    color: $secondary;
+
+    cursor: pointer;
+
+    path, circle {
+      transition: .7s ease;
+    }
+
+    &:hover {
+      path, circle {
+        fill: $primary-light;
+        transform: translate3d(0, -2px, 0); // x, y, z
+      }
+    }
+  }
+}
