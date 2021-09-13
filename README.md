@@ -21,7 +21,7 @@
 
 <h2>:revolving_hearts: Sobre o Projeto</h2>
 
-<p> Projeto do Site Web da série Wandavision do Disney+, site desenvolvido utilizando HTML5, SCSS e Javascript, totalmente responsivo, com um visual de encher os olhos e movimentos fluídos.</p>
+<p> Projeto do Site Web da série Wandavision do Disney+, site desenvolvido utilizando HTML5, SCSS e Javascript. Totalmente responsivo, com um visual de encher os olhos e com movimentos fluídos.</p>
 
 ---
 
