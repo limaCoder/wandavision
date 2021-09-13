@@ -41,7 +41,7 @@
 
 <h3>🧰 Ferramentas</h3>
 
-* [Figma](https://www.figma.com/) - Ferramenta para design de Interfaces.S 
+* [Figma](https://www.figma.com/) - Ferramenta para design de Interfaces
 * [Visual Studio Code](https://code.visualstudio.com/) - IDE de Desenvolvimento. 
   * [Live Sass Compiler](https://marketplace.visualstudio.com/items?itemName=ritwickdey.live-sass) -  Extensão do vscode para compilar o arquivo Sass e gerar style em css
 
